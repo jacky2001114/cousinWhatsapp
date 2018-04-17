@@ -1,14 +1,22 @@
 body{
-    width:80%;
+    width:100%;
     margin:20px auto;
   
 }
-
+*{
+   
+}
+.btn{
+    padding:20px 30px;
+   
+}
 #addMenuPanel{
+    width:100%;
     background: skyblue;
   padding:20px;
  
 }
+
 
 .finished-menu{
     width:100%;
@@ -16,6 +24,7 @@ body{
     padding-bottom: 1rem;
     background-color: rgba(86, 61, 124, .15);
     border: 1px solid rgba(86, 61, 124, .2);
+    font-size:120%;
 }
 .btn-danger{
     margin-left:20px;

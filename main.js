@@ -136,6 +136,13 @@ $(function(){
             +"<button class='btn btn-danger menu-remove'>取消</button></p>"
         )
         }
+        
+        if($('.finished-menu').length>1){
+            $('.finish').css('display','none')
+        }else{
+            $('.finish').css('display','inline-block')
+        }
+
         $('.menu-remove').on('click',function(){
          
             var menus = getMenus()     
