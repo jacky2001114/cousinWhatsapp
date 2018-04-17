@@ -2,10 +2,16 @@ $(function(){
     renderMenus()
   $('#addMenuPanel').css('display','none')
 
+  $('.4dollars').val('')
+  $('.6dollars').val('')
+  
     //4蚊餸
     $('.4dollars').on('change',function(){
       console.log($(this).val())
       $('.4dollars-output').append("<li ><span class="+"4dollars-item"+">"+$(this).val()+"</span>  <button class='4item-remove'>取消</button></li>")
+      $(this).val('')
+      
+      
       $('.4item-remove').on('click',function(){
        
       
@@ -17,6 +23,8 @@ $(function(){
     $('.6dollars').on('change',function(){
         console.log($(this).val())
         $('.6dollars-output').append("<li ><span class="+"6dollars-item"+">"+$(this).val()+"</span>  <button class='6item-remove'>取消</button></li>")
+        $(this).val('')
+        
         $('.6item-remove').on('click',function(){
          
         

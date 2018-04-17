@@ -13,10 +13,20 @@ body{
 #addMenuPanel{
     width:100%;
     background: skyblue;
-  padding:20px;
+    padding:20px;
  
 }
-
+select{
+   width:200px;
+   height:40px;
+}
+select option{
+   padding-top:20px;
+}
+input{
+    height:40px;
+    width:60%;
+}
 
 .finished-menu{
     width:100%;
