@@ -79,7 +79,7 @@ $(function(){
         
      $('#addMenuPanel').css('display','none')
      
-     $('.menu-num').val('');
+     $('.menu-num').val(1);
      $('.menu-spicy').val('唔辣');
      $('.menu-other').val('');
      $('.menu-drink').val('菊花茶')
