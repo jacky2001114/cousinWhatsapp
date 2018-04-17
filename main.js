@@ -97,8 +97,8 @@ $(function(){
     })
     //send
     $('.finish').on('click',function(){
-      window.open("https://api.whatsapp.com/send?phone=85267359303&text="
-      +getMenus().join('%0A')+'地點:聖若瑟英文中學','_blank');
+      window.open("https://api.whatsapp.com/send?phone=85267325159&text="
+      +getMenus().join('%0A')+'%0A'+'地點:聖若瑟英文中學','_blank');
     })
     $('.clear').on('click',function(){
         localStorage.removeItem('menus')
