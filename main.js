@@ -95,9 +95,9 @@ $(function(){
     $('.btn-info').on('click',function(){
         $('#addMenuPanel').css('display','block')
     })
-
+    //send
     $('.finish').on('click',function(){
-       alert(getMenus())
+      window.open("https://api.whatsapp.com/send?phone=85267359303&text="+getMenus(),'_blank');
     })
     $('.clear').on('click',function(){
         localStorage.removeItem('menus')
