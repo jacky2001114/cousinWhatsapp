@@ -84,6 +84,8 @@ $(function(){
      $('.menu-other').val('');
      $('.menu-drink').val('菊花茶')
 
+     $('.6dollars-output').empty()
+     $('.4dollars-output').empty()
      renderMenus()
 
     });
@@ -137,11 +139,7 @@ $(function(){
         )
         }
         
-        if($('.finished-menu').length>1){
-            $('.finish').css('display','none')
-        }else{
-            $('.finish').css('display','inline-block')
-        }
+     
 
         $('.menu-remove').on('click',function(){
          
