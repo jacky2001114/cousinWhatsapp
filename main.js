@@ -4,21 +4,21 @@ $(function(){
 
   $('.4dollars').val('')
   $('.6dollars').val('')
-  
+
     //4蚊餸
     $('.4dollars').on('change',function(){
-      console.log($(this).val())
-      $('.4dollars-output').append("<li ><span class="+"4dollars-item"+">"+$(this).val()+"</span>  <button class='4item-remove'>取消</button></li>")
-      $(this).val('')
-      
-      
-      $('.4item-remove').on('click',function(){
-       
-      
-         $(this).parent().remove()
-             
+        console.log($(this).val())
+        $('.4dollars-output').append("<li ><span class="+"4dollars-item"+">"+$(this).val()+"</span>  <button class='4item-remove'>取消</button></li>")
+        $(this).val('')
         
-     })
+        
+        $('.4item-remove').on('click',function(){
+        
+        
+            $(this).parent().remove()
+                
+        
+        })
     })
     $('.6dollars').on('change',function(){
         console.log($(this).val())
@@ -36,7 +36,7 @@ $(function(){
 
     
 
-    //sumbit
+    //submit
     $('.submit').on('click',function(){
       
         var num = $('.menu-num').val();
@@ -141,7 +141,7 @@ $(function(){
             
             var num=i+1
 
-            $('.row').append("<p class='finished-menu'data-num='"+i+"'>"+num+' : '
+            $('.row').append("<p class='finished-menu'data-num='"+i+"'><b>"+num+' : </b>'
             +menus[i]
             +"<button class='btn btn-danger menu-remove'>取消</button></p>"
         )
