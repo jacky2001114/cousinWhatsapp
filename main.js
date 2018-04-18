@@ -172,33 +172,35 @@ $(function(){
             +menus[i].other
             +',飲'+menus[i].drink
             
-            +'</label><span>$:<label>'+ menus[i].price +'</label></span>'
+            +"</label><span>$:<label class='price'>"+ menus[i].price +'</label></span>'
             +"<button class='btn btn-danger menu-remove'>取消</button></p>"
         )
 
         }
         var total_price = 0;
-        for(var i=0;i<$('.finished-menu label').length;i++){
-            console.log(total_price)
-            total_price+=parseInt($('.finished-menu label').eq(i).text())
-           
+        for(var i=0;i<$('.finished-menu .price').length;i++){
+            //console.log('t',parseInt($('.finished-menu .price').eq(i).text()))
+            
+            total_price=total_price+parseInt($('.finished-menu .price').eq(i).text())
+            //console.log(total_price)
         }
+        
         $('.total-price').text(total_price)
 
         $('.menu-remove').on('click',function(){
          
             var menus = getMenus()     
             var num= $(this).parent().attr('data-num')
-            console.log(num)
-            console.log(menus)
+            // console.log(num)
+            // console.log(menus)
             
             if(num==0){
               menus=menus.slice(1)
-              console.log('slice')
+            //   console.log('slice')
 
             }else{
                 menus.splice(num,1)
-                console.log('splice')
+                // console.log('splice')
             }
                
                
