@@ -1,8 +1,7 @@
 body{
     width:100%;
     margin:20px auto;
-    background: -webkit-linear-gradient(top, #25c481, #25b7c4);
-    background: linear-gradient(to top, #25c481, #25b7c4);
+ 
 }
 
 .btn{
@@ -11,8 +10,7 @@ body{
 }
 #addMenuPanel{
     width:100%;
-    background: -webkit-linear-gradient(top, #25c481, #25b7c4);
-    background: linear-gradient(to top, #25c481, #25b7c4);
+   background:burlywood;
     padding:20px;
  
 }
