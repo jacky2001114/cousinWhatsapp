@@ -1,8 +1,10 @@
 <html>
     <head>
         <title>表姐外賣</title>
+        
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" class="js-site-favicon" href="favicon.ico">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
         <link rel="stylesheet" href="style.css">
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -20,7 +22,7 @@
         <script src='main.js'></script>
     </head>
     
-    <h1>表姐外賣</h1> <button class="btn btn-info">新增</button>
+    <h1>表姐紅薯粉 - Whatsapp<img src='whatsapp.svg' style='width:32px;height:32px;'>外賣</h1> <button class="btn btn-info">新增</button>
     <button class='finish btn btn-success'>完成</button>
     <button class='clear btn btn-danger ' style='margin-left:50px;'>清除</button>
     <hr>
@@ -39,18 +41,18 @@
           <label class="control-label">幾號餐:</label>
           <div class="controls">
             <select class="input-xlarge menu-num">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-      <option>6</option>
-      <option>7</option>
-      <option>8</option>
-      <option>9</option>
-      <option>10</option>
-      <option>11</option>
-      <option>12</option></select>
+      <option value='1'>1 - 酸辣炸醬紅薯寬粉</option>
+      <option value='2'>2 - 酸辣炸醬紅薯中寬粉</option>
+      <option value='3'>3 - 酸辣炸醬紅薯粉條</option>
+      <option value='4'>4 - 酸辣炸醬米線</option>
+      <option value='5'>5 - 酸辣炸醬河粉</option>
+      <option value='6'>6 - 酸辣炸醬拉麵</option>
+      <option value='7'>7 - 無湯熱拌紅薯寬粉</option>
+      <option value='8'>8 - 無湯熱拌紅薯中寬粉</option>
+      <option value='9'>9 - 無湯熱拌紅薯粉條</option>
+      <option value='10'>10- 無湯熱拌米線</option>
+      <option value='11'>11- 無湯熱拌河粉</option>
+      <option value='12'>12- 無湯熱拌拉麵</option></select>
           </div>
 
         </div>
@@ -60,7 +62,7 @@
           <!-- Select Basic -->
           <label class="control-label">4元餸:</label>
           <div class="controls">
-            <select class="input-xlarge  4dollars" value=''>
+            <select class="input-xlarge  4dollars" value='select' >
                     
       <option>芝士腸</option>
       <option>紅腸</option>
@@ -93,7 +95,7 @@
       <option>雲耳</option>
       <option>紫菜</option></select>
           </div>
-          選擇的4元餸:
+          所選擇的4元餸:
       <ul class='4dollars-output'></ul>
         </div>
         <div class="control-group">
@@ -119,7 +121,7 @@
         <option>煙鴨胸</option>
         <option>豬軟骨</option></select>
             </div>
-            選擇的6元餸:
+            所選擇的6元餸:
             <ul class='6dollars-output'></ul>
           </div>
     <div class="control-group">

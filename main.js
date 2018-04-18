@@ -2,8 +2,8 @@ $(function(){
     renderMenus()
   $('#addMenuPanel').css('display','none')
 
-  $('.4dollars').val('')
-  $('.6dollars').val('')
+  $('.4dollars').val('b')
+  $('.6dollars').val('a')
 
     //4蚊餸
     $('.4dollars').on('change',function(){
@@ -23,7 +23,7 @@ $(function(){
     $('.6dollars').on('change',function(){
         console.log($(this).val())
         $('.6dollars-output').append("<li ><span class="+"6dollars-item"+">"+$(this).val()+"</span>  <button class='6item-remove'>取消</button></li>")
-        $(this).val('')
+        $(this).val('select')
         
         $('.6item-remove').on('click',function(){
          
@@ -39,11 +39,11 @@ $(function(){
     //submit
     $('.submit').on('click',function(){
       
-        var num = $('.menu-num').val();
+        var num = $('.menu-num :selected').val();
         var spicy=$('.menu-spicy').val();
         var other =$('.menu-other').val();
         var drink=$('.menu-drink').val();
-
+       
         var items = []
         
         for(var i=0;i<$('.4dollars-item').length;i++){

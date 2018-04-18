@@ -1,18 +1,18 @@
 body{
     width:100%;
     margin:20px auto;
-  
+    background: -webkit-linear-gradient(top, #25c481, #25b7c4);
+    background: linear-gradient(to top, #25c481, #25b7c4);
 }
-*{
-   
-}
+
 .btn{
     padding:20px 30px;
    
 }
 #addMenuPanel{
     width:100%;
-    background: skyblue;
+    background: -webkit-linear-gradient(top, #25c481, #25b7c4);
+    background: linear-gradient(to top, #25c481, #25b7c4);
     padding:20px;
  
 }
@@ -33,10 +33,14 @@ input{
    
     background-color: rgba(86, 61, 124, .15);
     border: 1px solid rgba(86, 61, 124, .2);
-    font-size:120%;
+    font-size:150%;
     margin:0 auto;
     padding:1rem 1rem;
+    
 }
-.btn-danger{
+.finished-menu .btn-danger{
+    float: right;
+    padding:0px 10px;
     margin-left:20px;
+    margin-top:10px;
 }
