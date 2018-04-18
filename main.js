@@ -40,39 +40,46 @@ $(function(){
     $('.submit').on('click',function(){
       
         var num = $('.menu-num :selected').val();
+        var fourItems = []
+        var sixItems = []
         var spicy=$('.menu-spicy').val();
         var other =$('.menu-other').val();
         var drink=$('.menu-drink').val();
+
+        var price = 0
+        num<7?price+=24:price+=23
        
-        var items = []
+        other==''?other:other=','+other
+        
         
         for(var i=0;i<$('.4dollars-item').length;i++){
 
-            items.push($('.4dollars-item').eq(i).html())
+            fourItems.push($('.4dollars-item').eq(i).html())
+            price+=4
 
         }
         for(var i=0;i<$('.6dollars-item').length;i++){
 
-            items.push($('.6dollars-item').eq(i).html())
+            sixItems.push($('.6dollars-item').eq(i).html())
+            price+=6
+        }
+        
+
+
+
+        var menu = {
+            'num':num,
+            'fourItems':fourItems,
+            'sixItems':sixItems,
+            'spicy':spicy,
+            'other':other,
+            'drink':drink,
+            'price':price,
 
         }
-        if(items.length>0){
-            items= ',餸 : '+items
-        }else{
-           items='唔要餸'
-        }
 
-
-        var menu=
-                num
-                +'號餐 '
-                +items             
-                +" , "
-                +spicy
-                +" , "
-                +other
-                +' 飲'
-                +drink
+      
+        
 
      
 
@@ -105,10 +112,16 @@ $(function(){
     $('.btn-info').on('click',function(){
         $('#addMenuPanel').css('display','block')
     })
+
+
     //send
     $('.finish').on('click',function(){
+        var arr=[]
+        for(var i=0;i<$('.output-data').length;i++){
+            arr.push($('.output-data').eq(i).text())
+        }
       window.open("https://api.whatsapp.com/send?phone=85267325159&text="
-      +getMenus().join('%0A')+'%0A'+'地點:聖若瑟英文中學','_blank');
+      +arr.join('%0A')+'%0A'+'地點:聖若瑟英文中學','_blank');
     })
     $('.clear').on('click',function(){
         localStorage.removeItem('menus')
@@ -133,21 +146,44 @@ $(function(){
     function renderMenus(){
 
         var menus = getMenus()
-        if(menus[0]==null){
-            delete menus[0]
-        }
+        
         $('.row').html('')
+
+
         for(var i=0;i<menus.length;i++){
             
             var num=i+1
+            var items=[]
+           if(menus[i].fourItems.length==0&&menus[i].sixItems.length==0){
+                items='唔要餸';
+           }else{
+               
+               items.push(menus[i].fourItems)
+               items.push(menus[i].sixItems)
+           }
 
-            $('.row').append("<p class='finished-menu'data-num='"+i+"'><b>"+num+' : </b>'
-            +menus[i]
+           
+
+
+            $('.row').append("<p class='finished-menu'data-num='"+i+"'><b>"+num+" : </b><label class='output-data'>"
+            +menus[i].num+'號餐'+', '
+            +items+','
+            +menus[i].spicy
+            +menus[i].other
+            +',飲'+menus[i].drink
+            
+            +'</label><span>$:<label>'+ menus[i].price +'</label></span>'
             +"<button class='btn btn-danger menu-remove'>取消</button></p>"
         )
+
         }
-        
-     
+        var total_price = 0;
+        for(var i=0;i<$('.finished-menu label').length;i++){
+            console.log(total_price)
+            total_price+=parseInt($('.finished-menu label').eq(i).text())
+           
+        }
+        $('.total-price').text(total_price)
 
         $('.menu-remove').on('click',function(){
          

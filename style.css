@@ -5,7 +5,7 @@ body{
 }
 
 .btn{
-    padding:20px 30px;
+    padding:20px 20px;
    
 }
 #addMenuPanel{
@@ -36,9 +36,10 @@ input{
     padding:1rem 1rem;
     
 }
-.finished-menu .btn-danger{
+.finished-menu .btn-danger,.finished-menu span{
     float: right;
     padding:0px 10px;
-    margin-left:20px;
+  
     margin-top:10px;
 }
+
