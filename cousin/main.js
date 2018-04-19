@@ -1,6 +1,36 @@
 $(function(){
     checklocalstorage()
     renderMenus()
+    $('.4dollars').val('b')
+    $('.6dollars').val('a')
+    //4蚊餸
+    $('.4dollars').on('change',function(){
+        console.log($(this).val())
+        $('.4dollars-output').append("<li ><span class="+"4dollars-item"+">"+$(this).val()+"</span>  <button class='4item-remove'>取消</button></li>")
+        $(this).val('')
+        
+        
+        $('.4item-remove').on('click',function(){
+        
+        
+            $(this).parent().remove()
+                
+        
+        })
+    })
+    $('.6dollars').on('change',function(){
+        console.log($(this).val())
+        $('.6dollars-output').append("<li ><span class="+"6dollars-item"+">"+$(this).val()+"</span>  <button class='6item-remove'>取消</button></li>")
+        $(this).val('select')
+        
+        $('.6item-remove').on('click',function(){
+        
+        
+        $(this).parent().remove()
+            
+        
+    })
+    })
 
     //submit
     $('.submit').on('click',function(){
