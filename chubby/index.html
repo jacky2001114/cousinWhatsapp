@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <title>脆味枇外賣</title>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" class="js-site-favicon" href="../favicon.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
+        <link rel="stylesheet" href="style.css">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117248152-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117248152-3');
+</script>
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+        <script src='main.js'></script>
+    </head>
+    <body>
+            <nav class="container" style='background:black'>
+                    <ul class="nav nav-pills">
+                      <li class="nav-item">
+                        <a class="nav-link  " href="../index.html">主頁</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link " href="../cousin/index.html">表姐</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link  active" href="index.html">脆味枇</a>
+                      </li>
+                    </ul>
+                  </nav>
+            
+            <div id='main'>
+    <h1><span class='red-font'>脆味枇</span> - Whatsapp<img src='../whatsapp.svg' style='width:32px;height:32px;'>外賣</h1> <button class="btn btn-info">新增</button>
+    <button class='finish btn btn-success'>完成</button>
+    <span class='badge badge-secondary badge-pill ' style='padding:20px 20px;'>合計:<span class='total-price'></span>元</span>
+    <button class='clear btn btn-danger '>清除</button>
+
+
+    <hr>
+      <small class='text-muted'>
+              1. 學生外送需購買4個起送貨     
+    </small>
+    <hr>
+
+    <fieldset id='addMenuPanel' style='display:none;'>
+
+            <!-- Form Name -->
+            <div id="legend" >
+                 <legend class="">脆味枇</legend>
+            </div>
+  
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="">餐號:</label>
+              <div class="col-md-4">
+                <select  class="menu-num">
+                 
+                </select>
+              </div>
+            </div>
+            
+            <!-- Select Basic -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="selectbasic">加$7:</label>
+              <div class="col-md-4">
+                <select class="7dollars">
+                  <option value="">唔加</option>
+                  <option value="">炸雞</option>
+                  <option value="">薄餅一件</option>
+                  <option value="">脆薯皇</option>
+                  <option value="">雞翼2件</option>
+                  <option value="">炸洋蔥圈4件</option>
+                </select>
+              </div>
+            </div>
+          <!-- Text input-->
+          <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">飲品:</label>  
+                <div class="col-md-4">
+                    <input name="textinput" type="text" placeholder="唔知有咩飲 自己填" class="menu-drink input-md">
+                
+                </div>
+            <hr>
+
+    <div class="control-group">
+          <label class="control-label">是否確認:</label>
+
+          <!-- Button -->
+          <div class="controls">
+            <button class="btn btn-success submit">確認</button>
+            <button class="btn btn-danger back">返回</button>
+          </div>
+          
+        </div>
+
+            
+            </fieldset>
+ 
+
+    <section id='total_menu' class='container'>
+        
+        <div class="row">
+          
+          </div>
+
+        <div class='input-group customer'>
+         <div class="input-group-prepend">
+          <span class='input-group-text'>地點:</span>
+          <input type="text" value='聖若瑟英文中學' class='place'>
+          <br>
+        </div>
+         
+        
+          <div class="input-group-prepend">
+              <span class='input-group-text'>時間:</span>
+              <input type="text" value='12:05' class='time'>
+            </div>
+          
+
+        </div>
+         
+    </section>
+    </div>
+   </body>
+
+</html>

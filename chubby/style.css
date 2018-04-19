@@ -1,0 +1,64 @@
+body{
+    width:100%;
+ 
+    background: -webkit-linear-gradient(top,rgb(245, 173, 19), orange);
+    background: linear-gradient(top,rgb(245, 173, 19), orange);
+}
+#main{
+    width:90%;
+    margin:0 auto;
+}
+
+nav *{
+    color:white;
+}
+.red-font{
+    color: red;
+    
+}
+.btn{
+    padding:20px 20px;
+    box-shadow: 0px 3px 0px 0px rgb(179, 179, 179);
+}
+#addMenuPanel{
+    width:100%;
+   background:burlywood;
+    padding:20px;
+ 
+}
+select{
+   width:200px;
+   height:40px;
+}
+select option{
+   padding-top:20px;
+}
+input[type=text]{
+    height:40px;
+    width:60%;
+}
+input[type=checkbox]{
+    height:20px;
+    width:20px;
+}
+.customer,.customer div{
+    width:80%;
+    margin:5px auto;
+}
+.finished-menu{
+    width:80%;
+   
+    background-color: rgba(86, 61, 124, .15);
+    border: 1px solid rgba(86, 61, 124, .2);
+    font-size:150%;
+    margin:0 auto;
+    padding:1rem 1rem;
+    
+}
+.finished-menu .btn-danger,.finished-menu span{
+    float: right;
+    padding:0px 10px;
+  
+    margin-top:10px;
+}
+
