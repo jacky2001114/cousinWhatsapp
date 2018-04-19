@@ -100,6 +100,7 @@ $(function(){
         $('#addMenuPanel').fadeOut(200);
         
         $('.menu-num').val(1);
+        $('.menu-soup').val('清湯');
         $('.menu-spicy').val('唔辣');
         $("#checkbox1").prop("checked", false);
         $('.menu-other').val('');

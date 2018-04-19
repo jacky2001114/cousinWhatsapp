@@ -88,9 +88,10 @@ $(function(){
 
             
         $('#addMenuPanel').fadeOut(200);
-        
-        $('.menu-num :selected').val(1);
-        $('.7dollars :selected').val('唔加');
+
+        $('.gp-soup').fadeIn(200)
+        $('.menu-num ').val(1);
+        $('.7dollars ').val("唔加");
 
      
         renderMenus()
@@ -104,7 +105,7 @@ $(function(){
     $('.btn-info').on('click',function(){
         
         $('#addMenuPanel').fadeIn(200)
-        $('.gp-soup').fadeIn(100)
+        
        
     })
 
