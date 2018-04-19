@@ -1,6 +1,7 @@
 $(function(){
     checklocalstorage()
     renderMenus()
+
     $('.4dollars').val('b')
     $('.6dollars').val('a')
     //4蚊餸
@@ -31,7 +32,6 @@ $(function(){
         
     })
     })
-
     //submit
     $('.submit').on('click',function(){
       
@@ -104,7 +104,7 @@ $(function(){
         $("#checkbox1").prop("checked", false);
         $('.menu-other').val('');
         $('.menu-drink').val('菊花茶')
-
+        $('.gp-soup').fadeIn(200)
         $('.6dollars-output').empty()
         $('.4dollars-output').empty()
         renderMenus()
@@ -112,7 +112,14 @@ $(function(){
     });
 
     //bind event 
-    
+   $('.menu-num').on('click',function(){
+      if($(this).val()>6){
+        $('.gp-soup').fadeOut(200)
+      }else{
+        $('.gp-soup').fadeIn(200)
+      }
+   })
+      
    
     $('.btn-info').on('click',function(){
         
