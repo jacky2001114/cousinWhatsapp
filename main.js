@@ -1,7 +1,7 @@
 $(function(){
-    localStorage.removeItem('menus')
-renderMenus()
-  $('#addMenuPanel').css('display','none')
+    checklocalstorage()
+    renderMenus()
+ 
 
   $('.4dollars').val('b')
   $('.6dollars').val('a')
@@ -41,17 +41,30 @@ renderMenus()
     $('.submit').on('click',function(){
       
         var num = $('.menu-num :selected').val();
+        var soup = $('.menu-soup').val();
         var fourItems = []
         var sixItems = []
-        var spicy=$('.menu-spicy').val();
-        var other =$('.menu-other').val();
-        var drink=$('.menu-drink').val();
+        var spicy = $('.menu-spicy').val();
+        
+        var other = $('.menu-other').val();
+        var drink = $('.menu-drink').val();
 
         var price = 0
-        num<7?price+=24:price+=23
+        if(num<7){
+            price+=24
+            soup='湯底:'+soup+','
+        }else{
+            price+=23
+            soup=''
+        }
        
         other==''?other:other=','+other
-        
+
+        //if 加底
+        if($("#checkbox1").prop('checked')){
+            other+= ',加底'
+            price+=8
+        }
         
         for(var i=0;i<$('.4dollars-item').length;i++){
 
@@ -69,7 +82,9 @@ renderMenus()
 
 
         var menu = {
+            'obejct':'Yes',
             'num':num,
+            'soup':soup,
             'fourItems':fourItems,
             'sixItems':sixItems,
             'spicy':spicy,
@@ -80,49 +95,73 @@ renderMenus()
         }
 
       
-        
-
-     
-
-        
-    var savearr=getMenus()
+               
+        var savearr=getMenus()
      
     
-     savearr.push(menu)
-     console.log(savearr)
-     localStorage.setItem("menus", JSON.stringify(savearr));
+        savearr.push(menu)
+        console.log(savearr)
+        localStorage.setItem("menus", JSON.stringify(savearr));
 
+            
+        $('#addMenuPanel').fadeOut(200);
         
-     $('#addMenuPanel').css('display','none')
-     
-     $('.menu-num').val(1);
-     $('.menu-spicy').val('唔辣');
-     $('.menu-other').val('');
-     $('.menu-drink').val('菊花茶')
+        $('.menu-num').val(1);
+        $('.menu-spicy').val('唔辣');
+        $("#checkbox1").prop("checked", false);
+        $('.menu-other').val('');
+        $('.menu-drink').val('菊花茶')
 
-     $('.6dollars-output').empty()
-     $('.4dollars-output').empty()
-     renderMenus()
+        $('.6dollars-output').empty()
+        $('.4dollars-output').empty()
+        renderMenus()
 
     });
 
-    //bind btn click function
-    $('.back').on('click',function(){
-        $('#addMenuPanel').css('display','none')
+    //bind event 
+    
+    $('.menu-num').change(function(){
+        console.log('chnage')
+        var num = "";
+        $( ".menu-num option:selected" ).each(function() {
+          num += $( this ).val();
+        });
+     
+        if(num >6){
+            $('.gp-soup').fadeOut(200)
+        }else{
+            $('.gp-soup').fadeIn(200)
+        }
     })
+
     $('.btn-info').on('click',function(){
-        $('#addMenuPanel').css('display','block')
+        
+        $('#addMenuPanel').fadeIn(200)
+        $('.gp-soup').fadeIn(100)
+       
     })
+
+    $('.back').on('click',function(){
+        $('#addMenuPanel').fadeOut(200);
+    })
+    
 
 
     //send
     $('.finish').on('click',function(){
+
         var arr=[]
+        var place = $('.place').val()
+        var time= $('.time').val()
         for(var i=0;i<$('.output-data').length;i++){
             arr.push($('.output-data').eq(i).text())
         }
       window.open("https://api.whatsapp.com/send?phone=85267325159&text="
-      +arr.join('%0A')+'%0A'+'地點:聖若瑟英文中學','_blank');
+      +arr.join('%0A')+'%0A'
+      +'地點:'+place
+      +'%0A'
+      +'時間'+time
+      ,'_blank');
     })
     $('.clear').on('click',function(){
         localStorage.removeItem('menus')
@@ -144,6 +183,20 @@ renderMenus()
        
         return savearr
     }
+
+
+    function checklocalstorage(){
+
+       var str = localStorage.getItem("menus");
+      
+       if(str!=null){
+        str.indexOf("obejct")==-1?localStorage.removeItem('menus'):console.log('checklocalstorage success')
+       }
+       
+
+    }
+
+
     function renderMenus(){
 
         var menus = getMenus()
@@ -168,6 +221,7 @@ renderMenus()
 
             $('.row').append("<p class='finished-menu'data-num='"+i+"'><b>"+num+" : </b><label class='output-data'>"
             +menus[i].num+'號餐'+', '
+            +menus[i].soup
             +items+','
             +menus[i].spicy
             +menus[i].other
