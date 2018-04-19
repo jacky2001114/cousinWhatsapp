@@ -1,5 +1,6 @@
 $(function(){
-    renderMenus()
+    localStorage.removeItem('menus')
+renderMenus()
   $('#addMenuPanel').css('display','none')
 
   $('.4dollars').val('b')
