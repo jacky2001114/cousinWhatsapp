@@ -1,7 +1,14 @@
+body{
+    background:#9dcbfb;
+}
 #main{
     width:90%;
     margin:0 auto;
 }
 nav *{
     color:white;
+}
+
+.container .jumbotron{
+    padding:1rem 1rem;
 }
