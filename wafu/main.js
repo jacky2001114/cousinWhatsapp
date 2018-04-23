@@ -49,7 +49,8 @@ $(function() {
 
     $('.menu-num').html(todayset)
 
-
+    $('.3dollars').val('none');
+    $('.4dollars').val('none');
 
     //submit
     $('.submit').on('click', function() {
@@ -85,8 +86,8 @@ $(function() {
         $('#addMenuPanel').fadeOut(200);
 
         $('.menu-num ').val(1);
-        $('.3dollars').val(1);
-        $('.4dollars').val(1);
+        $('.3dollars').val('none');
+        $('.4dollars').val('none');
         $('.drink-remove').remove()
         $('.drink-item').text('唔飲野');
        
