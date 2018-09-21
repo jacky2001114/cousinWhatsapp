@@ -1,7 +1,7 @@
 body{
     width:100%;
  
-    background: -webkit-linear-gradient(top,rgb(232, 207, 152), orange);
+   /* background: -webkit-linear-gradient(top,rgb(232, 207, 152), orange);*/
     background: linear-gradient(top, rgb(232, 207, 152), orange);
 }
 #main{

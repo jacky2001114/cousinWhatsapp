@@ -1,7 +1,7 @@
 body{
     width:100%;
     
-    background: -webkit-linear-gradient(top, #e8f349, #24eb60);
+    /*background: -webkit-linear-gradient(top, #e8f349, #24eb60);*/
     background: linear-gradient(top, #e8f349, #24eb60);
 }
 #main{

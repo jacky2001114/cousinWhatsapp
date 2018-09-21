@@ -1,261 +1,214 @@
 <html>
-    <head>
-        <title>表姐外賣</title>
-        
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/x-icon" class="js-site-favicon" href="../favicon.ico">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
-        <link rel="stylesheet" href="style.css">
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117248152-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-117248152-3');
-</script>
-
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-
-        <script src='main.js'></script>
-    </head>
-    <body>
-
-        <nav class="container" style='background:black'>
-            <ul class="nav nav-pills">
-              <li class="nav-item">
-                <a class="nav-link  " href="../index.html">主頁</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="index.html">表姐</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="../chubby/index.html">芝脆雞</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="../wafu/index.html">華富</a>
-                </li>
-            </ul>
-          </nav>
-
-<div id='main'>
-    <h1><span class='red-font'>表姐紅薯粉</span> - Whatsapp<img src='../whatsapp.svg' style='width:32px;height:32px;'>外賣</h1> <button class="btn btn-info">新增</button>
-    <button class='finish btn btn-success'>完成</button>
-    <span class='badge badge-secondary badge-pill ' style='padding:20px 10px;'>合計:<span class='total-price'></span>元</span>
-    <button class='clear btn btn-danger '>清除</button>
-    <hr>
-      <small class='text-muted'>1. 學生不收外賣費<br>2. 外送服務$30起<br>3. 額外加野只計算加底</small>
-    <hr>
-    <fieldset id='addMenuPanel' style='display:none;'>
-      <div id="legend" >
-        <legend class="">表姐</legend>
-      </div>
-   
-    
-
-    
-
-    <div class="control-group">
-
-          <!-- Select Basic -->
-          <label class="control-label">幾號餐:</label>
-          <div class="controls">
-            <select class="input-xlarge menu-num">
-      <option value='1'>1 - 酸辣炸醬紅薯寬粉</option>
-      <option value='2'>2 - 酸辣炸醬紅薯中寬粉</option>
-      <option value='3'>3 - 酸辣炸醬紅薯粉條</option>
-      <option value='4'>4 - 酸辣炸醬米線</option>
-      <option value='5'>5 - 酸辣炸醬河粉</option>
-      <option value='6'>6 - 酸辣炸醬拉麵</option>
-      <option value='7'>7 - 無湯熱拌紅薯寬粉</option>
-      <option value='8'>8 - 無湯熱拌紅薯中寬粉</option>
-      <option value='9'>9 - 無湯熱拌紅薯粉條</option>
-      <option value='10'>10- 無湯熱拌米線</option>
-      <option value='11'>11- 無湯熱拌河粉</option>
-      <option value='12'>12- 無湯熱拌拉麵</option></select>
-          </div>
-
-        </div>
-
-
-        <div class="control-group gp-soup">
+   <head>
+      <title>表姐外賣</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name=”description” content="一個給聖諾瑟英文中學學生更方便地利用Whatsapp叫外賣的網頁! 支援三個外賣:表姐紅薯粉,芝脆雞和華富" />
+      <meta name="keywords" content="sjacs 聖諾瑟英文中學 takeout 外賣 whatsapp 表姐紅薯粉 芝脆雞 華富">
+      <link rel="icon" type="image/x-icon" class="js-site-favicon" href="../favicon.ico">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
+      <link rel="stylesheet" href="style.css">
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117248152-3"></script>
+      <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         
+         gtag('config', 'UA-117248152-3');
+      </script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+      <script src='main.js'></script>
+   </head>
+   <body>
+      <nav class="container" style='background:black'>
+         <ul class="nav nav-pills">
+            <li class="nav-item">
+               <a class="nav-link  " href="../index.html">主頁</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link active" href="index.html">表姐</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link " href="../chubby/index.html">芝脆雞</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link " href="../wafu/index.html">華富</a>
+            </li>
+         </ul>
+      </nav>
+      <div id='main'>
+      <h1><span class='red-font'>表姐紅薯粉</span> - Whatsapp<img src='../whatsapp.svg' style='width:32px;height:32px;'>外賣</h1>
+      <button class="btn btn-info">新增</button>
+      <button class='finish btn btn-success'>完成</button>
+      <span class='badge badge-secondary badge-pill ' style='padding:20px 10px;'>合計:<span class='total-price'></span>元</span>
+      <button class='clear btn btn-danger '>清除</button>
+      <hr> 
+      <fieldset id='addMenuPanel' style='display:none;'>
+         <div id="legend" >
+            <legend class="">表姐</legend>
+         </div>
+         <div class="control-group">
+            <!-- Select Basic -->
+            <label class="control-label">幾號餐:</label>
+            <div class="controls">
+               <select class="input-xlarge menu-num">
+                  <option value='1'>1 - 酸辣炸醬紅薯寬粉</option>
+                  <option value='2'>2 - 酸辣炸醬紅薯中寬粉</option>
+                  <option value='3'>3 - 酸辣炸醬紅薯粉條</option>
+                  <option value='4'>4 - 酸辣炸醬米線</option>
+                  <option value='5'>5 - 酸辣炸醬河粉</option>
+                  <option value='6'>6 - 酸辣炸醬拉麵</option>
+                  <option value='7'>7 - 無湯熱拌紅薯寬粉</option>
+                  <option value='8'>8 - 無湯熱拌紅薯中寬粉</option>
+                  <option value='9'>9 - 無湯熱拌紅薯粉條</option>
+                  <option value='10'>10- 無湯熱拌米線</option>
+                  <option value='11'>11- 無湯熱拌河粉</option>
+                  <option value='12'>12- 無湯熱拌拉麵</option>
+               </select>
+            </div>
+         </div>
+         <div class="control-group gp-soup">
             <label class="control-label">湯底:</label>
             <div class="controls ">
-                
-                <select class="input-xlarge menu-soup" value='select' >
-                    <option>清湯</option>
-                    <option>酸辣</option>
-                    <option>麻辣</option>
-                    <option>麻酸辣</option>
-                  </select>
-                </div>
-        </div> 
-    
-
-    <div class="control-group">
-
-          <!-- Select Basic -->
-          <label class="control-label">4元餸:</label>
-          <div class="controls">
-            <select class="input-xlarge  4dollars" value='select' >
-                    
-      <option>芝士腸</option>
-      <option>紅腸</option>
-      <option>腸仔</option>
-      <option>蟹柳</option>
-      <option>豆卜</option>
-      <option>腐竹</option>
-      <option>金菇</option>
-      <option>魚腐</option>
-      <option>牛丸</option>
-      <option>魚蛋</option>
-      <option>龍蝦丸</option>
-      <option>貢丸</option>
-      <option>墨魚丸</option>
-      <option>醬爆丸</option>
-      <option>山根</option>
-      <option>蟹子丸</option>
-      <option>海帶</option>
-      <option>生菜</option>
-      <option>芽菜</option>
-      <option>通菜</option>
-      <option>酸菜</option>
-      <option>豬紅</option>
-      <option>蘿蔔</option>
-      <option>芝心丸</option>
-      <option>魚皮餃</option>
-      <option>雞翼尖</option>
-      <option>滷水蛋</option>
-      <option>冬菇</option>
-      <option>雲耳</option>
-      <option>紫菜</option></select>
-          </div>
-          所選擇的4元餸:
-      <ul class='4dollars-output'></ul>
-        </div>
-        <div class="control-group">
-
+               <select class="input-xlarge menu-soup" value='select' >
+                  <option>清湯</option>
+                  <option>酸辣</option>
+                  <option>麻辣</option>
+                  <option>麻酸辣</option>
+               </select>
+            </div>
+         </div>
+         <div class="control-group">
+            <!-- Select Basic -->
+            <label class="control-label">4元餸:</label>
+            <div class="controls">
+               <select class="input-xlarge  4dollars" value='select' >
+                  <option>芝士腸</option>
+                  <option>紅腸</option>
+                  <option>腸仔</option>
+                  <option>蟹柳</option>
+                  <option>豆卜</option>
+                  <option>腐竹</option>
+                  <option>金菇</option>
+                  <option>魚腐</option>
+                  <option>牛丸</option>
+                  <option>魚蛋</option>
+                  <option>龍蝦丸</option>
+                  <option>貢丸</option>
+                  <option>墨魚丸</option>
+                  <option>醬爆丸</option>
+                  <option>山根</option>
+                  <option>蟹子丸</option>
+                  <option>海帶</option>
+                  <option>生菜</option>
+                  <option>芽菜</option>
+                  <option>通菜</option>
+                  <option>酸菜</option>
+                  <option>豬紅</option>
+                  <option>蘿蔔</option>
+                  <option>芝心丸</option>
+                  <option>魚皮餃</option>
+                  <option>雞翼尖</option>
+                  <option>滷水蛋</option>
+                  <option>冬菇</option>
+                  <option>雲耳</option>
+                  <option>紫菜</option>
+               </select>
+            </div>
+            所選擇的4元餸:
+            <ul class='4dollars-output'></ul>
+         </div>
+         <div class="control-group">
             <!-- Select Basic -->
             <label class="control-label">6元餸</label>
             <div class="controls">
-              <select class="input-xlarge 6dollars"  value=''>
-          
-        <option>魷魚</option>
-        <option>炸醬</option>
-        <option>豬大腸</option>
-        <option>豬肚</option>
-        <option>牛柏葉</option>
-        <option>雞絲</option>
-        <option>肥牛</option>
-        <option>雞中翼</option>
-        <option>豬潤</option>
-        <option>響鈴</option>
-        <option>腩肉</option>
-        <option>豬頸肉</option>
-        <option>豬耳</option>
-        <option>煙鴨胸</option>
-        <option>豬軟骨</option></select>
+               <select class="input-xlarge 6dollars"  value=''>
+                  <option>魷魚</option>
+                  <option>炸醬</option>
+                  <option>豬大腸</option>
+                  <option>豬肚</option>
+                  <option>牛柏葉</option>
+                  <option>雞絲</option>
+                  <option>肥牛</option>
+                  <option>雞中翼</option>
+                  <option>豬潤</option>
+                  <option>響鈴</option>
+                  <option>腩肉</option>
+                  <option>豬頸肉</option>
+                  <option>豬耳</option>
+                  <option>煙鴨胸</option>
+                  <option>豬軟骨</option>
+               </select>
             </div>
             所選擇的6元餸:
             <ul class='6dollars-output'></ul>
-          </div>
-    <div class="control-group">
-
-          <!-- Select Basic -->
-          <label class="control-label">辣度:</label>
-          <div class="controls">
-            <select class="input-xlarge menu-spicy">
-      <option>唔辣</option>
-      <option>小辣</option>
-      <option>中辣</option>
-      <option>大辣</option>
-      <option>麻小辣</option>
-      <option>麻中辣</option>
-      <option>麻大辣</option></select>
-          </div>
-
-        </div>
-
-        <br>
-        <div class="control-group">
-           
-            <input type="checkbox" id="checkbox1" value="加底" >
+         </div>
+         <div class="control-group">
+            <!-- Select Basic -->
+            <label class="control-label">辣度:</label>
+            <div class="controls">
+               <select class="input-xlarge menu-spicy">
+                  <option>唔辣</option>
+                  <option>小辣</option>
+                  <option>中辣</option>
+                  <option>大辣</option>
+                  <option>麻小辣</option>
+                  <option>麻中辣</option>
+                  <option>麻大辣</option>
+               </select>
+            </div>
+         </div>
+         <br>
+         <div class="control-group">
+            <input type="checkbox" id="checkbox1" value="加底"/>
             <label>加底</label>
-
-           
-           
-        </div>
-
-
-
-
-        <div class="control-group">
-
+         </div>
+         <div class="control-group">
             <!-- Text input-->
             <label class="control-label" for="input01">其他:</label>
             <div class="controls">
-              <input type="text" placeholder="走青 走酸菜 多花生 加底 等" class="input-xlarge menu-other">
-             
+               <input type="text" placeholder="走青 走酸菜 多花生 加底 等" class="input-xlarge menu-other"/>
             </div>
-          </div>
-
-
-
-
-    <div class="control-group">
-
-    <!-- Select Basic -->
-    <label class="control-label">飲品:</label>
-    <div class="controls">
-         <select class="input-xlarge menu-spicy menu-drink">
-            <option>菊花茶</option>
-            <option>檸檬茶</option>
-            
-        </select>
-    </div>
-
-
-    <hr>
-
-    <div class="control-group">
-          <label class="control-label">是否確認:</label>
-
-          <!-- Button -->
-          <div class="controls">
-            <button class="btn btn-success submit">確認</button>
-            <button class="btn btn-danger back">返回</button>
-          </div>
-          
-        </div>
-
-    </fieldset>
- 
-
-    <section id='total_menu' class='container'>
-        
-        <div class="row">
-          
-          </div>
-
-        <div class='input-group customer'>
-         <div class="input-group-prepend">
+         </div>
+         <div class="control-group">
+            <!-- Select Basic -->
+            <label class="control-label">飲品:</label>
+            <div class="controls">
+               <select class="input-xlarge menu-spicy menu-drink">
+                  <option>菊花茶</option>
+                  <option>檸檬茶</option>
+               </select>
+            </div>
+            <hr>
+            <div class="control-group">
+               <label class="control-label">是否確認:</label>
+               <!-- Button -->
+               <div class="controls">
+                  <button class="btn btn-success submit">確認</button>
+                  <button class="btn btn-danger back">返回</button>
+               </div>
+            </div>
+      </fieldset>
+      <section id='total_menu' class='container'>
+      <div class="row">
+      </div>
+      <div class='input-group customer'>
+        <div class="input-group-prepend">
           <span class='input-group-text'>地點:</span>
-          <input type="text" value='聖若瑟英文中學' class='place'>
+           <input type="text" value='聖若瑟英文中學' class='place'/>
           <br>
         </div>
-         
-        
-          <div class="input-group-prepend">
-              <span class='input-group-text'>時間:</span>
-              <input type="text" value='12:05' class='time'>
-            </div>
-          
-
+        <div class="input-group-prepend">
+          <span class='input-group-text'>時間:</span>
+          <input type="text" value='12:05' class='time'/>
         </div>
-         
-    </section>
-   </div>
-  </body>
+      </div>
+      
+      <hr>
+      <small class='text-muted'>1. 學生不收外賣費<br>2. 外送服務$30起<br>3. 額外加野只計算加底<br>4. 如有任何問題,意見,建議均可去信至<a href="mailto:jacky2001114@gmail.com">jacky2001114@gmail.com</a></small>
+
+      </section>
+      </div>
+   </body>
 </html>
