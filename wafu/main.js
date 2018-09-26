@@ -3,36 +3,42 @@ $(function() {
     renderMenus()
 
     var set1 =
-   `<option value="A">A. 蒜香煙鴨胸火腿粒炒飯</option>
-    <option value="B">B. 日式雞扒拼燒豬頸肉飯</option>
-    <option value="C">C. 印度咖哩薯仔豬扒飯</option>
-    <option value="D">D. 黑椒汁西冷牛扒腸仔飯</option>
-    <option value="E">E. 卡邦尼煙肉火腿燴意粉</option>
-    <option value="F">F. 京都豬扒飯</option>
-    <option value="1">1. 焗芝士鮮茄豬片飯</option>
-    <option value="2">2. 焗芝士肉醬腸片意粉</option>`
+    `
+    <option value="A">A.黃金蟹子蔥花炒</option>
+    <option value="B">B.日式鷄扒拼炸帶子飯</option>
+    <option value="C">C.印度咖哩吉列豬扒飯</option>
+    <option value="D">D.燒汁香草鷄扒拼漢堡扒飯</option>
+    <option value="E">E.卡邦尼芝士煙肉火腿燴意粉</option>
+    <option value="F">F.椒鹽豬扒條飯</option>
+    <option value="1">1.焗芝士茄茸豬扒飯</option>
+    <option value="2">2.焗芝士肉醬意粉</option>`
 
     var set2 =
-   `<option value="A">A. 揚州炒飯</option>
-    <option value="B">B. 日式雞扒拼金菇肥牛卷飯</option>
-    <option value="C">C. 印度咖哩薯仔牛腩飯</option>
-    <option value="D">D. 燒汁香草雞扒拼漢堡扒飯</option>
-    <option value="E">E. 意式茄茸火腿肉醬燴意粉</option>
-    <option value="F">F. 椒鹽豬扒飯</option>
-    <option value="1">1. 焗芝士鮮茄豬片飯</option>
-    <option value="2">2. 焗芝士肉醬腸片意粉</option>`
+    `
+    <option value="A">A.蒜香煙鴨胸火腿粒炒飯</option>
+    <option value="B">B.日式鷄扒拼金菇肥牛卷飯</option>
+    <option value="C">C.印度咖哩薯仔鷄球飯</option>
+    <option value="D">D.黑椒汁西冷牛扒飯</option>
+    <option value="E">E.香草忌廉蜆肉虾仔燴意粉</option>
+    <option value="F">F. XO醬豉汁涼瓜肉排飯</option>`
 
     var set3 =
-   `<option value="A">A. XO醬菠蘿雞粒炒飯</option>
-    <option value="B">B. 日式和風牛柳粒飯</option>
-    <option value="C">C. 印度咖哩吉列豬扒飯</option>
-    <option value="D">D. 台式肉燥蛋雞扒飯</option>
-    <option value="E">E. 香草忌廉芝士海鮮燴意粉</option>
-    <option value="F">F. 京都豬扒飯</option>
-    <option value="1">1. 焗芝士鮮茄豬片飯</option>
-    <option value="2">2. 焗芝士肉醬腸片意粉</option>`
+    `
+    <option value="A">A.欖菜火腿鷄粒炒飯</option>
+    <option value="B">B.日式鷄扒拼豬肉漢堡扒飯</option>
+    <option value="C">C.日式咖哩薯仔牛腩飯</option>
+    <option value="D">D.黑椒汁豬頸肉腸仔飯</option>
+    <option value="E">E.卡邦尼芝士煙肉火腿燴意粉</option>
+    <option value="F">F.椒鹽豬扒條飯</option>
+    <option value="G">G.焗白汁忌廉蚧柳雞皇飯</option>
+    <option value="H">H.日式鰻魚配肥牛飯</option>`
 
-
+    var setAllDay = 
+    `
+    <option value="湯一">湯一，牛腩.名門卷.配菜湯米線</option> 
+    <option value="湯二">湯二，雞肉.名門卷.配菜湯烏冬</option>
+    <option value="湯三">湯三，肥牛名.門卷.配菜湯烏冬</option>
+    <option value="撈四">撈四，辣炸醬.肥牛.撈紅薯粉</option>`
 
     var todayset = set1;
     var today = new Date().getDay()
@@ -46,42 +52,34 @@ $(function() {
     } else {
         todayset = set1
     }
+    todayset += setAllDay
 
     $('.menu-num').html(todayset)
 
-    $('.3dollars').val('none');
-    $('.4dollars').val('none');
+    $('.3dollars').val('唔飲野');
+   
 
     //submit
     $('.submit').on('click', function() {
 
         var num = $('.menu-num :selected').val();      
-        var drink = $('.drink-item').html();
+        var drink = $('.3dollars :selected').val();
         var price = 25
 
-        if (drink == '唔飲野') {
-            drink = ',唔飲野';
-        } else {
-            drink = ',飲:' + drink;
-            price += parseInt($('.drink-item').attr('data-price'));
-        }
-        
+      
         var menu = {
             'obejct': 'Yes',
             'num': num,      
             'drink': drink,
             'price': price
-
         }
-        console.log(menu)
+        //console.log(menu)
 
         var savearr = getMenus()
 
-
         savearr.push(menu)
-        console.log(savearr)
+        //console.log(savearr)
         localStorage.setItem("wafumenus", JSON.stringify(savearr));
-
 
         $('#addMenuPanel').fadeOut(200);
 
@@ -89,49 +87,42 @@ $(function() {
         $('.3dollars').val('none');
         $('.4dollars').val('none');
         $('.drink-remove').remove()
-        $('.drink-item').text('唔飲野');
+        $('.3dollars').val('唔飲野');
        
-
-
-           
-
-
-     
-
         renderMenus()
 
     });
 
     //bind event 
     //飲品
-    $('.3dollars').on('change', function() {
+    // $('.3dollars').on('change', function() {
         
-        $('.drink-output').html("<li ><span class=" + "drink-item"  + " data-price='3' >" + $('.3dollars :selected').text() + "</span><button class='drink-remove'>取消</button></li>")
-        $('.4dollars').val('')
+    //     $('.drink-output').html("<li ><span class=" + "drink-item"  + " data-price='3' >" + $('.3dollars :selected').text() + "</span><button class='drink-remove'>取消</button></li>")
+    //     $('.4dollars').val('')
 
 
-        $('.drink-remove').on('click', function() {
+    //     $('.drink-remove').on('click', function() {
 
 
-            $(this).parent().html("<span class='drink-item'>唔飲野</span>")
+    //         $(this).parent().html("<span class='drink-item'>唔飲野</span>")
 
 
-        })
-    })
-    $('.4dollars').on('change', function() {
+    //     })
+    // })
+    // $('.4dollars').on('change', function() {
         
-        $('.drink-output').html("<li ><span class=" + "drink-item" + " data-price='4'>" + $('.4dollars :selected').text() + "</span><button class='drink-remove'>取消</button></li>")
-        $('.3dollars').val('')
+    //     $('.drink-output').html("<li ><span class=" + "drink-item" + " data-price='4'>" + $('.4dollars :selected').text() + "</span><button class='drink-remove'>取消</button></li>")
+    //     $('.3dollars').val('')
 
 
-        $('.drink-remove').on('click', function() {
+    //     $('.drink-remove').on('click', function() {
 
 
-            $(this).parent().html("<span class='drink-item'>唔飲野</span>")
+    //         $(this).parent().html("<span class='drink-item'>唔飲野</span>")
 
 
-        })
-    })
+    //     })
+    // })
     
 
     $('.btn-info').on('click', function() {
@@ -195,14 +186,14 @@ $(function() {
             var num = i + 1
 
             $('.row').append("<p class='finished-menu'data-num='" + i + "'><b>" + num + " : </b><label class='output-data'>" +
-                menus[i].num + '號餐'       
-                + menus[i].drink
-                +
-                "</label><span>$:<label class='price'>" + menus[i].price + '</label></span>' +
+                menus[i].num + '號餐, ' + 
+                menus[i].drink +
+                "</label><label class='price'>" /*+ menus[i].price + */ + '</label>' +
                 "<button class='btn btn-danger menu-remove'>取消</button></p>"
             )
 
         }
+        /*
         var total_price = 0;
         for (var i = 0; i < $('.finished-menu .price').length; i++) {
             //console.log('t',parseInt($('.finished-menu .price').eq(i).text()))
@@ -212,7 +203,7 @@ $(function() {
         }
 
         $('.total-price').text(total_price)
-
+*/
         $('.menu-remove').on('click', function() {
 
             var menus = getMenus()

@@ -41,7 +41,7 @@
             <div id='main'>
     <h1><span class='red-font'>華富</span> - Whatsapp<img src='../whatsapp.svg' style='width:32px;height:32px;'>外賣</h1> <button class="btn btn-info">新增</button>
     <button class='finish btn btn-success'>完成</button>
-    <span class='badge badge-secondary badge-pill ' style='padding:20px 10px;'>合計:<span class='total-price'></span>元</span>
+    <!-- <span class='badge badge-secondary badge-pill ' style='padding:20px 10px;'>合計:<span class='total-price'></span>元</span> -->
     <button class='clear btn btn-danger '>清除</button>
 
 
@@ -69,38 +69,31 @@
             飲品:
             <!-- Select Basic -->
             <div class="form-group">
-              <label class="col-md-4 control-label" for="selectbasic">罐裝飲品(加$3):</label>
+              <label class="col-md-4 control-label" for="selectbasic">飲品:</label>
               <div class="col-md-4">
                 <select class="3dollars">
-                  <option value='none' style='display:none'>請選擇</option>
-                  <option value='1'>可樂</option>
-                  <option >檸檬+C</option>
-                  <option >冰紅茶</option>
-                  <option >雪梨茶</option>
-                  <option >芬達橙汁</option>
-                  <option >檸檬茶</option>
-                  <option >菊花茶</option>
+                  
+                  <option value = '唔飲野' selected>唔飲野</option>
+                  <option>冰鎮奶茶</option>
+                  <option>冰鎮華田</option>
+                  <option>珍珠奶茶</option>
+                  <option>可樂</option>
+                  <option>檸檬C+</option>
+                  <option>冰紅茶</option>
+                  <option>雪梨茶</option>
+                  <option>芬達橙汁</option>
+                  <option>冰極檸檬茶</option>
+                  <option>鮮奶忌廉</option>
+                  <option>飛雪水</option>
+                  <option>維他菊花茶</option>
+                  <option>維他蘋果綠茶</option>
                 </select>
               </div>
             </div>
+            
+           
 
-            <!-- Select Basic -->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="selectbasic">支裝(加$4):</label>
-              <div class="col-md-4">
-                <select class="4dollars">
-                  <option value='none'  style='display:none'>請選擇</option>
-                  <option value='1'>冰鎮奶茶</option>
-                  <option >冰鎮華田</option>
-                  <option >凍惹米水</option>          
-                </select>
-              </div>
-            </div>
-
-            <il class='drink-output'>
-                <label class="col-md-4 control-label" >所選擇的飲品:</label>
-              <li><span class='drink-item'>唔飲野</span></li>
-            </il>
+           
          <hr>
 
     <div class="control-group">
