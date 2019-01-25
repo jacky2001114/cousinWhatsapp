@@ -39,10 +39,10 @@
       </nav>
       <div id='main'>
       <h1><span class='red-font'>表姐紅薯粉</span> - Whatsapp<img src='../whatsapp.svg' style='width:32px;height:32px;'>外賣</h1>
-      <button class="btn btn-info">新增</button>
-      <button class='finish btn btn-success'>完成</button>
+      <button class="btn btn-info action-btn" id="addBtn">新增</button>
+      <button class='finish btn btn-success action-btn'>完成</button>
       <span class='badge badge-secondary badge-pill ' style='padding:20px 10px;'>合計:<span class='total-price'></span>元</span>
-      <button class='clear btn btn-danger '>清除</button>
+      <button class='clear btn btn-danger action-btn'>清除</button>
       <hr> 
       <fieldset id='addMenuPanel' style='display:none;'>
          <div id="legend" >
@@ -193,15 +193,21 @@
       <section id='total_menu' class='container'>
       <div class="row">
       </div>
+
+      <div class="btn-group" role="group" aria-label="Place">
+         <button type="button" class="btn btn-info btn-sm" id="toSJACSbtn">SJACS 12:05</button>
+         <button type="button" class="btn btn-info btn-sm" id="toSYSSbtn">SYSS 12:55</button>
+      </div>
+
       <div class='input-group customer'>
         <div class="input-group-prepend">
           <span class='input-group-text'>地點:</span>
-           <input type="text" value='聖若瑟英文中學' class='place'/>
+           <input type="text" value='聖若瑟英文中學' class='place form-control'/>
           <br>
         </div>
         <div class="input-group-prepend">
           <span class='input-group-text'>時間:</span>
-          <input type="text" value='12:05' class='time'/>
+          <input type="text" value='12:05' class='time form-control'/>
         </div>
       </div>
       

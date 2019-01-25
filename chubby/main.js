@@ -101,7 +101,7 @@ $(function() {
 
 
 
-    $('.btn-info').on('click', function() {
+    $('.btn-info#addBtn').on('click', function() {
 
         $('#addMenuPanel').fadeIn(200)
 
@@ -225,6 +225,16 @@ $(function() {
             renderMenus()
         })
     }
+
+    $('#toSJACSbtn').click(function() {
+        $('.place').val('聖若瑟英文中學');
+        $('.time').val('12:05');
+    })
+
+    $('#toSYSSbtn').click(function() {
+        $('.place').val('聖言中學');
+        $('.time').val('12:55');
+    })
 
 
 })
