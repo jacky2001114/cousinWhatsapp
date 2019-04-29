@@ -1,0 +1,67 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true,
+            "modules": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "google"
+    ],
+    "settings": {
+        "react": {
+            "pragma": "h"
+        }
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "eqeqeq": [ "error", "always", { "null": "ignore" } ],
+        "indent": [ "error", 4, {
+            "SwitchCase": 1
+        }],
+        "max-len": [ "warn", { "code": 100 } ],
+        "no-trailing-spaces": [ "warn", { "ignoreComments": true } ],
+        "no-unused-vars": "off",
+        "object-curly-spacing": [ "warn", "always", { 
+            "arraysInObjects": true,
+            "objectsInObjects": false 
+        }],
+        "padded-blocks": "off",
+        "quotes": [ "error", "double", { "allowTemplateLiterals": true } ],
+        "require-jsdoc": "off",
+        "spaced-comment": [ "warn", "always", { 
+            "line": {
+                "exceptions": [ "-", "=" ]
+            }
+        }],
+        "@typescript-eslint/class-name-casing": "error",
+        "@typescript-eslint/explicit-member-accessibility": [ "error", {
+            "accessibility": "explicit",
+            "overrides": {
+                "constructors": "no-public",
+                "properties": "off"
+            }
+        }],
+        "@typescript-eslint/no-empty-interface": "warn",
+        "@typescript-eslint/no-namespace": "off",
+        "@typescript-eslint/no-unused-vars": [ "warn", {
+            "args": "after-used",
+            "ignoreRestSiblings": true
+        }]
+    }
+}
