@@ -1,31 +1,30 @@
 "use strict";
 
-import { Component, ComponentChild, RenderableProps } from "preact";
+import { h, Component } from "preact";
 
-import { JSXInputAttributes } from "./types/Attributes";
-import { Omit } from "./types/Helpers";
-import { MigrateProperties } from "./types/Preact";
 
-export class App extends Component<App.Properties, App.States> {
 
-    constructor(props?: App.Properties, context?: any) {
-
-        super(props, context);
+export default class TodoList extends Component {
+    state = { todos: [], text: '' };
+    setText = e => {
+        this.setState({ text: e.target.value });
+    };
+    addTodo = () => {
+        let { todos, text } = this.state;
+        todos = todos.concat({ text });
+        this.setState({ todos, text: '' });
+    };
+    render({ }, { todos, text }) {
+        return (
+            <form onSubmit={this.addTodo} action="javascript:">
+                <input value={text} onInput={this.setText} />
+                <button type="submit">Add</button>
+                <ul>
+                    { todos.map( todo => (
+                        <li>{todo.text}</li>
+                    )) }
+                </ul>
+            </form>
+        );
     }
-
-    public render(props?: RenderableProps<App.Properties>, state?: Readonly<App.States>, context?: any): ComponentChild {
-
-        // const {  } = props;
-        return null;
-    }
-}
-
-export namespace App {
-
-    export type Properties = BaseProperties;
-
-    export interface States {}
-
-    interface BaseProperties {}
-    type IncludedAttributes = "id";
 }

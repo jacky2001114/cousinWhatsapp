@@ -3,7 +3,7 @@
 const Path = require("path");
 
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-//const HTMLWebpackPlugin = require("html-webpack-plugin");
+const HTMLWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const WebpackBundleAnalyzer = require("webpack-bundle-analyzer");
 //const WebpackPWAManifest = require("webpack-pwa-manifest");
@@ -13,7 +13,7 @@ module.exports = (env, argv) => {
 
     const config = {
         entry: {
-            "main":  Path.resolve(__dirname, "src/App.tsx"),
+            "main":  Path.resolve(__dirname, "src/index.tsx"),
             //"theme": Path.resolve(__dirname, "src/theme/theme.scss"),
         },
         output: {
@@ -29,7 +29,7 @@ module.exports = (env, argv) => {
             }, {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                  //  MiniCssExtractPlugin.loader,
                     "css-loader",
                     "sass-loader",
                 ]
@@ -56,33 +56,18 @@ module.exports = (env, argv) => {
                 { from: "src/index.html", to: "index.html" },
                 //{ from: "res/social", to: "social" }
             ]),
-            /* new HTMLWebpackPlugin({
-                template:      "!!handlebars-loader!src/index.hbs",
+            new HTMLWebpackPlugin({
+                template:      "./src/index.html",
                 excludeChunks: ["theme"],
-                inject:        false,
-                title:         "What's my Minecraft UUID?"
-            }), */
-            /* new MiniCssExtractPlugin({
-                chunkFilename: "[id].css",
-                filename:      "[name].css",
-            }), */
-            /* new WebpackPWAManifest({
-                filename:         "manifest.json",
-                fingerprints:     false,
-                inject:           false,
-                name:             "What's my Minecraft UUID?",
-                short_name:       "Minecraft UUID",
-                description:      "Check the UUID of your Minecraft username with a click of a button!",
-                display:          "standalone",
-                theme_color:      "#16222A",
-                background_color: "#16222A",
-                orientation:      "any",
-            }) */
+                inject:        true,
+                title:         "cousin Whatsapp"
+            })
+           
         ],
         watch: false,
         devtool: "",
         devServer: {
-            contentBase: Path.resolve(__dirname, "dist"),
+            contentBase: Path.resolve(__dirname, "src"),
             host: "0.0.0.0",
             inline: true,
             port: 8080
